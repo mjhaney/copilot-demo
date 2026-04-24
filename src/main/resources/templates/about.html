@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>About</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; }
+        .page { max-width: 900px; margin: 0 auto; }
+        .page h1 { color: #333; }
+        .page p { line-height: 1.6; }
+        .main-nav { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+        .main-nav a { color: #0066cc; text-decoration: none; font-weight: 600; }
+        .main-nav a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div th:insert="fragments/menu :: menu"></div>
+<div class="page">
+    <h1>About</h1>
+    <p>This demo application provides a simple course and instructor management interface. It includes list pages, detail views, and shared navigation for easy browsing.</p>
+    <p>The app is built using Spring Boot with Thymeleaf views and a mock in-memory store, making it easy to extend into a real application later.</p>
+</div>
+</body>
+</html>

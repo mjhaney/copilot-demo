@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Profile</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; }
+        .page { max-width: 900px; margin: 0 auto; }
+        .page h1 { color: #333; }
+        .profile-card { background: #fafafa; border: 1px solid #ddd; padding: 1.5rem; border-radius: 6px; }
+        .profile-card p { margin: 0.75rem 0; }
+        .main-nav { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+        .main-nav a { color: #0066cc; text-decoration: none; font-weight: 600; }
+        .main-nav a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div th:insert="fragments/menu :: menu"></div>
+<div class="page">
+    <h1>Your Profile</h1>
+    <div class="profile-card">
+        <p><strong>Name:</strong> Jane Demo</p>
+        <p><strong>Email:</strong> jane.demo@example.com</p>
+        <p><strong>Role:</strong> Course Administrator</p>
+        <p><strong>Member since:</strong> January 2025</p>
+    </div>
+</div>
+</body>
+</html>

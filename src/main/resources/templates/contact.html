@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Contact</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; }
+        .page { max-width: 900px; margin: 0 auto; }
+        .page h1 { color: #333; }
+        .page p { line-height: 1.6; }
+        .contact-info { margin-top: 1rem; }
+        .main-nav { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+        .main-nav a { color: #0066cc; text-decoration: none; font-weight: 600; }
+        .main-nav a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div th:insert="fragments/menu :: menu"></div>
+<div class="page">
+    <h1>Contact</h1>
+    <p>If you need help or want to provide feedback, use the details below.</p>
+    <div class="contact-info">
+        <p><strong>Email:</strong> support@example.com</p>
+        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+        <p><strong>Office:</strong> Main Campus Administration Building</p>
+    </div>
+</div>
+</body>
+</html>

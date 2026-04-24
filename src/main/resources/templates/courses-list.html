@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Course List</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 0.75rem; text-align: left; }
+        th { background: #f4f4f4; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .home-link { margin-bottom: 1rem; }
+        .main-nav { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+        .main-nav a { color: #0066cc; text-decoration: none; font-weight: 600; }
+        .main-nav a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div th:insert="fragments/menu :: menu"></div>
+
+<h1>All Courses</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Course Name</th>
+        <th>Course Code</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="course : ${courses}">
+        <td>
+            <a th:href="@{/courses/view/{code}(code=${course.code()})}"
+               th:text="${course.name()}"></a>
+        </td>
+        <td th:text="${course.code()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Settings</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; }
+        .page { max-width: 900px; margin: 0 auto; }
+        .page h1 { color: #333; }
+        .settings-card { background: #fafafa; border: 1px solid #ddd; padding: 1.5rem; border-radius: 6px; }
+        .settings-card p { margin: 0.75rem 0; }
+        .main-nav { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+        .main-nav a { color: #0066cc; text-decoration: none; font-weight: 600; }
+        .main-nav a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div th:insert="fragments/menu :: menu"></div>
+<div class="page">
+    <h1>Settings</h1>
+    <div class="settings-card">
+        <p><strong>Language:</strong> English</p>
+        <p><strong>Notification preferences:</strong> Enabled</p>
+        <p><strong>Theme:</strong> Light</p>
+        <p><strong>Privacy:</strong> Default</p>
+    </div>
+</div>
+</body>
+</html>

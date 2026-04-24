@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Admin</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; }
+        .page { max-width: 900px; margin: 0 auto; }
+        .page h1 { color: #333; }
+        .page p { line-height: 1.6; }
+        .card { background: #fafafa; border: 1px solid #ddd; padding: 1rem; border-radius: 6px; margin-bottom: 1rem; }
+        .main-nav { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+        .main-nav a { color: #0066cc; text-decoration: none; font-weight: 600; }
+        .main-nav a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div th:insert="fragments/menu :: menu"></div>
+<div class="page">
+    <h1>Admin Dashboard</h1>
+    <p>This is a mock administration page for managing the application.</p>
+    <div class="card">
+        <h2>System status</h2>
+        <p>All systems are operational.</p>
+    </div>
+    <div class="card">
+        <h2>Quick actions</h2>
+        <ul>
+            <li>Review course list</li>
+            <li>Review instructor assignments</li>
+            <li>Update settings</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

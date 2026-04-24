@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Instructor List</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 0.75rem; text-align: left; }
+        th { background: #f4f4f4; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .course-link { display: inline-block; margin-right: 0.5rem; }
+        .home-link { margin-bottom: 1rem; }
+        .main-nav { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+        .main-nav a { color: #0066cc; text-decoration: none; font-weight: 600; }
+        .main-nav a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div th:insert="fragments/menu :: menu"></div>
+
+<h1>Current Instructors</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Courses</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="instructor : ${instructors}">
+        <td>
+            <a th:href="@{/instructors/view/{email}(email=${instructor.email()})}"
+               th:text="${instructor.name()}"></a>
+        </td>
+        <td th:text="${instructor.email()}"></td>
+        <td>
+            <span th:if="${#lists.isEmpty(instructor.courseCodes())}">None</span>
+            <span th:unless="${#lists.isEmpty(instructor.courseCodes())}">
+                <a th:each="code : ${instructor.courseCodes()}" 
+                   th:href="@{/courses/view/{code}(code=${code})}"
+                   th:text="${code}"
+                   class="course-link"></a>
+            </span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

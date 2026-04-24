@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Help</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; }
+        .page { max-width: 900px; margin: 0 auto; }
+        .page h1 { color: #333; }
+        .page ul { margin-top: 1rem; }
+        .page li { margin-bottom: 0.75rem; }
+        .main-nav { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+        .main-nav a { color: #0066cc; text-decoration: none; font-weight: 600; }
+        .main-nav a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div th:insert="fragments/menu :: menu"></div>
+<div class="page">
+    <h1>Help</h1>
+    <p>Use the navigation menu to explore the application.</p>
+    <ul>
+        <li><strong>Home</strong> brings you back to the main landing page.</li>
+        <li><strong>Courses</strong> lists all available courses and lets you open course details.</li>
+        <li><strong>Instructors</strong> lists all instructors and lets you view their course assignments.</li>
+        <li><strong>About</strong> explains the purpose of this demo application.</li>
+        <li><strong>Contact</strong> shows how to reach support.</li>
+    </ul>
+</div>
+</body>
+</html>
