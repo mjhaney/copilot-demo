@@ -11,6 +11,14 @@ java {
 	withSourcesJar()
 }
 
+jar {
+	archiveBaseName.set('copilot-demo')
+}
+
+bootJar {
+	archiveBaseName.set('copilot-demo')
+}
+
 tasks.withType(JavaCompile) {
 	options.compilerArgs.add('-parameters')
 }
