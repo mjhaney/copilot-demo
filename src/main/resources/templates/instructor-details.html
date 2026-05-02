@@ -20,7 +20,7 @@
     </style>
 </head>
 <body>
-<div th:insert="fragments/menu :: menu"></div>
+<div th:insert="~{fragments/menu :: menu}"></div>
 
 <div class="instructor-info">
     <h1 th:text="${instructor.name}"></h1>
